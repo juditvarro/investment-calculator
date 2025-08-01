@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <td>Year</td>
+      <td>Investment Value</td>
+      <td>Interest (Year)</td>
+      <td>Total Interest</td>
+      <td>Invested Capital</td>
+    </tr>
+  </thead>
+  <tbody>
+    @for (row of rows; track row.id) {
+    <tr>
+      <td>{{ row.year }}</td>
+      <td>{{ row.value }}</td>
+      <td>{{ row.interest }}</td>
+      <td>{{ row.totalInterest }}</td>
+      <td>{{ row.capital }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
