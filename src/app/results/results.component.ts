@@ -1,21 +1,16 @@
-import { Component } from "@angular/core";
+import { Component, computed, inject } from "@angular/core";
+import { CalculatorService } from "../calculator.service";
+import { CurrencyPipe } from "@angular/common";
 
 @Component({
   selector: "app-results",
   standalone: true,
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: "./results.component.html",
   styleUrl: "./results.component.css",
 })
 export class ResultsComponent {
-  rows = [
-    {
-      id: 1,
-      year: 1,
-      value: 1500,
-      interest: 55,
-      totalInterest: 60,
-      capital: 1000,
-    },
-  ];
+  private calculatorService = inject(CalculatorService);
+  
+  results = computed(() => this.calculatorService.investmentResults())
 }
